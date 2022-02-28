@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyDictionary
 {
@@ -34,7 +30,7 @@ namespace MyDictionary
             myDictionary.Add("Twelve", 12);
             Console.WriteLine();
 
-            // Adding same value with different key
+            // Adding existing value with different key
             myDictionary.Add("Eight Again", 8);
 
             Console.WriteLine("Using indexer");
