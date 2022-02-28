@@ -26,12 +26,12 @@ namespace MyDictionary
 
         public void Add(K key, V value)
         {
-            int index = GetHash(key);
-
             if (Count >= 0.75 * capacity)
             {
                 IncreaseCapacity();
             }
+
+            int index = GetHash(key);
 
             while (arrayBucket[index].HasValue)
             {
@@ -40,7 +40,7 @@ namespace MyDictionary
                     throw new InvalidOperationException($"The key [{key}] is already assigned to a value");
                 }
 
-                index++;
+                index = (index + 1) % capacity;
             }
 
             var kVP = new KeyValuePair<K, V>(key, value);
